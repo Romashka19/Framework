@@ -26,6 +26,12 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Program\OSpanel\OSPanel\domains\frame\system" />
+      <recent name="D:\Program\OSpanel\OSPanel\domains\frame\app\Controllers" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -51,6 +57,7 @@
       <workItem from="1578657163303" duration="4539000" />
       <workItem from="1578741467828" duration="2728000" />
       <workItem from="1578749237716" duration="6037000" />
+      <workItem from="1578823851491" duration="11934000" />
     </task>
     <servers />
   </component>

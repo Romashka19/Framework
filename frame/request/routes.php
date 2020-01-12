@@ -4,9 +4,9 @@ return [
         'controller' => 'main',
         'action' => 'index',
     ],
-    'front-end' => [
-        'controller' => 'Film',
-        'action' => 'viewFilm',
+    'index' => [
+        'controller' => 'films',
+        'action' => 'index',
     ],
 
 ];
