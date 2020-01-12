@@ -22,14 +22,9 @@
   <component name="ProjectId" id="1WFNd25yF7F25MRdvwI4GKlog4T" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Program\OSpanel\OSPanel\domains\frame\app\Controllers" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -54,9 +49,8 @@
       <option name="presentableId" value="Default" />
       <updated>1578657162072</updated>
       <workItem from="1578657163303" duration="4539000" />
-      <workItem from="1578741467828" duration="2728000" />
-      <workItem from="1578749237716" duration="6037000" />
-      <workItem from="1578823851491" duration="9553000" />
+      <workItem from="1578741467828" duration="3804000" />
+      <workItem from="1578749194369" duration="43000" />
     </task>
     <servers />
   </component>
