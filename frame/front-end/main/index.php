@@ -1,1 +1,1 @@
-<p>Main page</p>
+<p>Glavnaya Stranitsa</p>

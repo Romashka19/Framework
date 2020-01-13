@@ -1,8 +1,8 @@
 <?php
 
-namespace system;
+namespace System;
 
-
+use PDO;
 
 class Database
 {
@@ -10,28 +10,27 @@ class Database
     private $user = "root";
     private $password = "";
     private $dbname = "film_list";
-    private $dbh;
-    private $query;
+    private $db;
+
     private $output;
 
     public function __construct(){
-        $this->dbh = new PDO('mysql:dbname='.$this->db.';host='.$this->host.';charset=utf8mb4', $this->user , $this->password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+        $this->db = new PDO('mysql:dbname='.$this->dbname.';host='.$this->host.';charset=utf8mb4', $this->user , $this->password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
     }
 
-    public function read(){
-
+    public function query($sql){
+        $query = $this->db->query($sql);
+        $result = $query->fetchColumn();
+        return $query;
     }
 
-    public function add(){
-        $result =  $dbh->query("INSERT INTO",);
+    public function row($sql){
+       $result = $this->query($sql);
+       return $result->fetchAll(PDO::FETCH_ASSOC);
     }
-
-    public function update(){
-
-    }
-
-    public function delete(){
-        $sql = "delete from animals where id = " . $animal->getId();
-        $this->db->runQuery($sql);
-    }
+/*
+    public function column($sql){
+        $result = $this->query($sql);
+        return $result->fetchColumn();
+    }*/
 }

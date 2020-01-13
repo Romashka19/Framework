@@ -4,7 +4,7 @@ return [
         'controller' => 'main',
         'action' => 'index',
     ],
-    'index' => [
+    'films' => [
         'controller' => 'films',
         'action' => 'index',
     ],

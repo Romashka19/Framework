@@ -1,7 +1,7 @@
 <?php
 
 
-namespace system;
+namespace System;
 
 
 class View
@@ -17,9 +17,18 @@ class View
     }
 
    public function render($title, $vars = []){
+        extract($vars);
+
         ob_start();
         require 'front-end/'.$this->path.'.php';
         $content = ob_get_clean();
         require 'front-end/layout/'.$this->layout.'.php';
     }
+
+    /*public function redirect($url){
+        header('location: '.$url);
+        exit;
+    }*/
+
+
 }

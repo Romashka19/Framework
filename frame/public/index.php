@@ -1,1 +1,2 @@
-require '..vendor/autoload.php';
+<?php
+require __DIR__.'/../front-end/main/index.php';

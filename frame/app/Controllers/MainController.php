@@ -1,14 +1,15 @@
 <?php
 
 
-namespace app\Controllers;
+namespace App\Controllers;
 
-use system\Controller;
+use System\Controller;
+use System\Database;
 
 class MainController extends Controller
 {
     public function index(){
-        echo 'werwer';
-        $this->view->render('Главная');
+        $db = new Database;
+        $this->view->render('Главная cnhfybwf');
     }
 }

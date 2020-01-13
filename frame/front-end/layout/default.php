@@ -5,6 +5,6 @@
     <title><?php echo $title; ?></title>
 </head>
 <body>
-        <?php echo $content; ?>
+<p> <?php echo $content; ?></p>
 </body>
 </html>

@@ -1,15 +1,17 @@
 <?php
 
 
-namespace app\Controllers;
+namespace App\Controllers;
 
-use system\Controller;
-
+use System\Controller;
+use System\Database;
 
 class FilmsController extends Controller
 {
     public function index(){
-        echo 'view';
-        var_dump($this->route);
+        $db = new Database;
+        $data = $db->row('SELECT name FROM films WHERE id = 1');
+        debug($data);
+        $this->view->render('Главная film');
     }
 }

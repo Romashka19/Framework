@@ -1,8 +1,9 @@
 <?php
 
 
-namespace system;
+namespace System;
 
+use System\Errors;
 
 class Route
 {
@@ -34,21 +35,20 @@ class Route
     }
     public function run(){
         if ($this->match()){
-            $path = 'app/Controllers/'.ucfirst($this->params['controller']).'Controller';
+            $path = 'App\Controllers\\'.ucfirst($this->params['controller']).'Controller';
             if(class_exists($path)){
                $action = $this->params['action'];
                if(method_exists($path, $action)){
                     $controller = new $path($this->params);
-                    $controller ->$action();
+                    $controller->$action();
                }else{
-                   echo 'не найден action: '.$action;
+                   Errors::errorCode(404);
                }
             }else{
-                echo 'не найден contr: '.$path;
+                Errors::errorCode(404);
             }
-        }
-        else{
-            echo "Route не найден";
+        } else{
+            Errors::errorCode(404);
         }
 
     }
