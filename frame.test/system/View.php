@@ -20,9 +20,9 @@ class View
         extract($vars);
 
         ob_start();
-        require __DIR__.'/../front-end/'.$this->path.'.php';
+        require 'front-end/'.$this->path.'.php';
         $content = ob_get_clean();
-        require __DIR__.'/../front-end/layout/'.$this->layout.'.php';
+        require 'front-end/layout/'.$this->layout.'.php';
     }
 
     /*public function redirect($url){
