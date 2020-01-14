@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d1dcbda-e8c0-4ac6-876a-ae3ecbd50719" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +19,11 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1WFNd25yF7F25MRdvwI4GKlog4T" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -34,15 +38,15 @@
       <recent name="D:\Program\OSpanel\OSPanel\domains\frame\app\Controllers" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -64,6 +68,10 @@
       <workItem from="1578919750754" duration="1631000" />
       <workItem from="1578951307533" duration="101000" />
       <workItem from="1578951423057" duration="913000" />
+<<<<<<< HEAD:frame.test/.idea/workspace.xml
+      <workItem from="1579011896841" duration="11583000" />
+=======
+>>>>>>> 5c29a94b314a45b0af857d93b06b50bb76491f99:frame.test/.idea/workspace.xml
     </task>
     <servers />
   </component>

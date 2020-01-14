@@ -9,6 +9,9 @@ use System\Database;
 class FilmsController extends Controller
 {
     public function index(){
+
+        $db = Database::getInstance();
+        $db->select('films');
         $db = new Database;
 
         $this->view->render('Главная film');

@@ -5,6 +5,7 @@ namespace System;
 
 use System\Errors;
 
+
 class Route
 {
     protected $routes = [];
@@ -12,7 +13,8 @@ class Route
 
 
     public function __construct(){
-        $arr = require 'request/routes.php';
+        $arr = require __DIR__.'/../request/routes.php';
+
         foreach ($arr as $key => $val){
             $this->add($key, $val);
         }
