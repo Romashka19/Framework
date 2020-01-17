@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1d1dcbda-e8c0-4ac6-876a-ae3ecbd50719" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1WFNd25yF7F25MRdvwI4GKlog4T" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Program\OSpanel\OSPanel\domains\frame.test\request" />
+      <recent name="D:\Program\OSpanel\OSPanel\domains\frame.test\system" />
+      <recent name="D:\Program\OSpanel\OSPanel\domains\frame\system" />
+      <recent name="D:\Program\OSpanel\OSPanel\domains\frame\app\Controllers" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1d1dcbda-e8c0-4ac6-876a-ae3ecbd50719" name="Default Changelist" comment="" />
+      <created>1578657162072</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578657162072</updated>
+      <workItem from="1578657163303" duration="4539000" />
+      <workItem from="1578741467828" duration="2728000" />
+      <workItem from="1578749237716" duration="6037000" />
+      <workItem from="1578823851491" duration="16079000" />
+      <workItem from="1578902929462" duration="8506000" />
+      <workItem from="1578919750754" duration="1631000" />
+      <workItem from="1578951307533" duration="101000" />
+      <workItem from="1578951423057" duration="913000" />
+<<<<<<< HEAD:frame.test/.idea/workspace.xml
+      <workItem from="1579011896841" duration="11583000" />
+=======
+>>>>>>> 5c29a94b314a45b0af857d93b06b50bb76491f99:frame.test/.idea/workspace.xml
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>
