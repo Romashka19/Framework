@@ -49,8 +49,6 @@ class FilmsController extends Controller
         if(isset($_POST['deleteData'])) {
             $id = $_POST['delete_id'];
             $db->delete("DELETE FROM `films` where id='$id'");
-           // header('location: '.self::index());
-            //require 'frame.test/front-end/films/index';
         }
     }
 }

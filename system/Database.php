@@ -14,10 +14,6 @@ class Database implements MyInterface
 
     private static $instance = null;
 
-    private $query = null;
-
-
-
     public static function connection(){
         self::$db = new PDO(
             'mysql:dbname=film_list;host=localhost;charset=utf8mb4',
@@ -26,23 +22,11 @@ class Database implements MyInterface
             array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
     }
 
-    public static function query($sql){
-        self::connection();
-        $query = self::$db->query($sql);
-        return $query;
-    }
-
-    public function select($sql)
+    public static function select($sql)
     {
-        $result = $this->query($sql);
+        self::connection();
+        $result = self::$db->query($sql);
         return $result->fetchAll(PDO::FETCH_ASSOC);
-        /*$sql = ;
-        $q = $this->db->query($sql);
-        while ($r = $q->fetch(PDO::FETCH_ASSOC)){
-            $data[]=$r;
-        }
-        //debug($data);
-        return $data;*/
     }
     public static function create($sql){
         self::connection();
