@@ -33,16 +33,16 @@ class FilmsController extends Controller
     }
     public function update(){
         $db = Database::getInstance();
-        if(isset($_POST["Submit"])) {
+
             $id = $_POST['id'];
             $name = $_POST['name'];
             $director = $_POST['director'];
             $actors = $_POST['actors'];
             $budget = $_POST['budget'];
-            $db->create(
-                "UPDATE `films` SET name = '" . $name . "' , director='" . $director . "', actors='" . $actors . "', budget='" . $budget . "' WHERE id=" . $id);
-            ;
-        }
+
+            $db->update(
+                "UPDATE `films` SET name = '" . $name . "' , director='" . $director . "', actors='" . $actors . "', budget='" . $budget . "' WHERE id='$id'");
+
     }
     public function delete(){
         $db = Database::getInstance();
