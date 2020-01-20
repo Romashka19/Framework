@@ -4,6 +4,14 @@ namespace System;
 
 use PDO;
 
+interface MyInterface
+{
+    public static function select($sql);
+    public static function delete($sql);
+    public static function update($sql);
+    public static function create($sql);
+}
+
 class Database implements MyInterface
 {
     private static $host = "localhost";
@@ -39,7 +47,6 @@ class Database implements MyInterface
     }
     public static function delete($sql){
         self::connection();
-        //debug($sql);
         self::$db->query($sql);
     }
 

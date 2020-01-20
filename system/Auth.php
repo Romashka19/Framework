@@ -3,52 +3,60 @@
 
 namespace System;
 
+use PDO;
+
 
 class Auth
 {
-    private $host = "localhost";
-    private $user = "root";
-    private $password = "";
-    private $dbname = "users";
-    private $db = null;
+    private static $host = "localhost";
+    private static $user = "root";
+    private static $password = "";
+    private static  $dbname = "film_list";
+    private static $db = null;
 
     private static $instance = null;
 
-    private $query;
-
-    public function __construct(){
-        $this->db = new PDO(
-            'mysql:dbname='.$this->dbname.';host='.$this->host.';charset=utf8mb4',
-            $this->user ,
-            $this->password,
+    public static function connection(){
+        self::$db = new PDO(
+            'mysql:dbname=film_list;host=localhost;charset=utf8mb4',
+            self::$user,
+            self::$password,
             array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
-
     }
 
-    public function login($login,$password){
-        $query = PDO::query($this->db,"SELECT id, password FROM users WHERE login='".PDO::quote($this->db,$_POST['login'])."' LIMIT 1");
+    public function login($sql){
+        self::connection();
+        self::$db->query($sql);
+        /*$query = PDO::query($this->db,"SELECT id, password FROM users WHERE login='".PDO::quote($this->db,$_POST['login'])."' LIMIT 1");
         $data = PDOStatement::fetch($query);
         if($data['password'] === password_hash($_POST['password'])) {
 
             //если совпадает то красота
         }
-
+*/
     }
 
-    public function register(){
-        $query = PDO::query($this->db, "SELECT id FROM users WHERE login='".PDO::quote($this->db, $_POST['login'])."'");
-        if(PDOStatement::rowCount($query) > 0)
-        {
-            echo "Пользователь с таким логином уже существует в базе данных";
-        }
-        $login = $_POST['login'];
-        $password = password_hash(trim($_POST['password']));
-        mysqli_query($this->db,"INSERT INTO users SET login='".$login."', password='".$password."'");
+    public static function register($sql){
+        self::connection();
+        self::$db->query($sql);
     }
 
 
     public function logout(){
 
+    }
+    public function __clone(){
+    }
+    public function __wakeup(){
+    }
+
+    public static function getInstance()
+    {
+        if (!self::$instance) {
+            self::$instance = new self();
+        }
+
+        return self::$instance;
     }
 
 }
