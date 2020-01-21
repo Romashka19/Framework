@@ -4,33 +4,79 @@
 namespace App\Controllers;
 
 use System\Controller;
-use System\Auth;
+use PDO;;
+use PDOStatement;
+use System\Database;
 
 class AuthController extends Controller
 {
     public function login(){
-        $auth = new Auth();
+        $db = Database::getInstance();
+        $res = null;
+        if(isset($_SESSION["session_username"])){
+            header("Location: /");
+        }
+        if(isset($_POST["Login"])) {
+            if (!empty($_POST['login']) && !empty($_POST['password'])) {
+                $login = $_POST['login'];
+                $password = md5($_POST['password']);
+                $sql = $db->select("SELECT * FROM `users` WHERE login='" . $login . "' AND password='".$password."'");
+                /*$num = current($sql);
+                $num = current($num);
+                debug($num);*/
+                if($sql){
+                        $row = current($sql);
+                        $dblogin = $row['login'];
+                        $dbpassword = $row['password'];
+
+                    if($login == $dblogin && $password == $dbpassword){
+                        $_SESSION['session_username'] = $login;
+                        header('Location: /');
+                    }
+                } else {
+                    echo "Неправильное имя или пароль!";
+                }
+
+            } else {
+                echo "Запоните все поля!!";
+            }
+        }
         $this->view->render('LogIn');
 
     }
-    public function register(){
-        $auth = Auth::getInstance();
-        if(isset($_POST['submit'])){
-
-            $query = PDO::query()($auth, "SELECT id FROM `users` WHERE login='".PDO::quote($auth, $_POST['login'])."'");
-            if(mysqli_num_rows($query) > 0)
-            {
-                $err[] = "Пользователь с таким логином уже существует в базе данных";
-            }
-            if(count($err) == 0) {
-                $login = $_POST['login'];
-                $password = md5($_POST['password']);
-                $auth->register(
-                    "INSERT INTO `users`(`id`,`login`,`password`) 
+    public function register()
+        {
+            $db = Database::getInstance();
+            if (isset($_POST['Register'])) {
+                if (!empty($_POST['login']) && !empty($_POST['password'])) {
+                    $login = $_POST['login'];
+                    $password = md5($_POST['password']);
+                    $sql = $db->select("SELECT COUNT(*) as count FROM `users` WHERE login='" . $login . "'");
+                    $num = current($sql);
+                    $num = current($num);
+                    if ($num == 0) {
+                        $db->create(
+                            "INSERT INTO `users`(`id`,`login`,`password`) 
                     VALUES(NULL,'" . $login . "','" . $password . "')");
+                        if ($db) {
+                            header('Location: /');
+                        }
+
+                    } else {
+                        echo "Это имя уже используеться!!!!";
+                    }
+                } else {
+                    echo "Заполните все поля!!!!";
+                }
             }
+
+            $this->view->render('Register');
         }
 
-        $this->view->render('Register');
+    public function logout(){
+        session_start();
+        unset($_SESSION['session_username']);
+        session_destroy();
+        header("Location: /");
     }
 }

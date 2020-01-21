@@ -9,10 +9,20 @@
     <title><?php echo $title; ?></title>
 </head>
 <body>
-<div style="width: 900px;  margin: 0 auto">
-    <div style="float: left; width: 200px;"></div>
-    <div><p><?php echo $content; ?></p></div>
-    <div style="float: right; width: 200px;"></div>
+<div>
+    <header>
+        <nav class="navbar navbar-light bg-light">
+            <span class="navbar-brand mb-0 h1">Films</span>
+            <span><?php echo $_SESSION['session_username'];?></span>
+            <a href="/auth/logout">LOGOUT</a>
+        </nav>
+    </header>
+    <div class="container" style="width: 900px;  margin: 0 auto">
+        <div align="center"><?php echo $content; ?></div>
+    </div>
+    <footer>
+
+    </footer>
 </div>
 </body>
 </html>

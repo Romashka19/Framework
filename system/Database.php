@@ -4,7 +4,7 @@ namespace System;
 
 use PDO;
 
-interface MyInterface
+interface IDatabase
 {
     public static function select($sql);
     public static function delete($sql);
@@ -12,7 +12,7 @@ interface MyInterface
     public static function create($sql);
 }
 
-class Database implements MyInterface
+class Database implements IDatabase
 {
     private static $host = "localhost";
     private static $user = "root";
@@ -30,8 +30,7 @@ class Database implements MyInterface
             array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
     }
 
-    public static function select($sql)
-    {
+    public static function select($sql){
         self::connection();
         $result = self::$db->query($sql);
         return $result->fetchAll(PDO::FETCH_ASSOC);
@@ -39,7 +38,6 @@ class Database implements MyInterface
     public static function create($sql){
         self::connection();
         self::$db->query($sql);
-        return true;
     }
     public static function update($sql){
         self::connection();

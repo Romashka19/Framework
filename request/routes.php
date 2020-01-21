@@ -24,6 +24,10 @@ return [
         'controller' => 'auth',
         'action' => 'register',
     ],
+    'auth/logout' => [
+        'controller' => 'auth',
+        'action' => 'logout',
+    ],
     'films/delete' => [
         'controller' => 'films',
         'action' => 'delete',

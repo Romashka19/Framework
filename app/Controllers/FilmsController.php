@@ -27,19 +27,20 @@ class FilmsController extends Controller
             $db->create(
                 "INSERT INTO `films`(`id`,`name`,`director`,`actors`,`budget`) 
                     VALUES(NULL,'" . $name . "','" . $director . "','" . $actors . "','" . $budget . "')");
+            if($db){
+                header('Location: /films');
+            }
         }
 
         $this->view->render('Создать');
     }
     public function update(){
         $db = Database::getInstance();
-
             $id = $_POST['id'];
             $name = $_POST['name'];
             $director = $_POST['director'];
             $actors = $_POST['actors'];
             $budget = $_POST['budget'];
-
             $db->update(
                 "UPDATE `films` SET name = '" . $name . "' , director='" . $director . "', actors='" . $actors . "', budget='" . $budget . "' WHERE id='$id'");
 
