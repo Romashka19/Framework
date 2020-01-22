@@ -74,7 +74,6 @@ class AuthController extends Controller
         }
 
     public function logout(){
-        session_start();
         unset($_SESSION['session_username']);
         session_destroy();
         header("Location: /");

@@ -13,8 +13,13 @@
     <header>
         <nav class="navbar navbar-light bg-light">
             <span class="navbar-brand mb-0 h1">Films</span>
-            <span><?php echo $_SESSION['session_username'];?></span>
-            <a href="/auth/logout">LOGOUT</a>
+            <?php if($_SESSION['session_username']): ?>
+                <?php echo $_SESSION['session_username'];?>
+                <a href="/auth/logout">LOGOUT</a>
+            <?php else: ?>
+            <p><a href="/auth/login">Login</a></p>
+            <p><a href="/auth/register">Register</a></p>
+            <?php endif; ?>
         </nav>
     </header>
     <div class="container" style="width: 900px;  margin: 0 auto">

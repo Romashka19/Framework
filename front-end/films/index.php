@@ -10,13 +10,13 @@
     </tr>
     <?php foreach ($data as $list): ?>
     <?php //$list = ((object)$list); ?>
-    <tr id="<?=$list["id"] ?>" >
+    <tr data-value="<?=htmlspecialchars(json_encode($list))?>">
         <td data-target="name"><?=$list["name"]?></td>
-        <td data-target="director"><?=$list["director"]?></td>
+        <td data-target="director" data-value="<?=$list["director"]?>"><?=$list["director"]?></td>
         <td data-target="budget"><?=$list["budget"]?></td>
         <td data-target="actors"><?=$list["actors"]?></td>
         <td>
-            <a href="#" class="btn btn-success updateData" data-role="update" data-id="<?php echo $list['id']; ?>">Update</a>
+            <button type="button" href="#" class="btn btn-success updateBtn" ">Update</button>
             <button type="button" class="btn btn-danger deleteBtn" >Удалить</button></td>
     </tr>
     <?php endforeach; ?>
@@ -24,29 +24,36 @@
 <a type="button" class="btn btn-success" href="/">На главную</a>
 
 <!---SCRIPTS------------------------------------------------------------------------------ --->
+<script>
+    $(document).ready(function () {
+        $('.deleteBtn').on('click', function () {
+            $('#deleteModal').modal('show');
+            $tr = $(this).closest('tr');
+            var text = JSON.parse($tr.attr('data-value'));
+            console.log(text.id);
+            $('#id').val(text.id);
 
+        });
+    });
+
+</script>
 
 <script>
     $(document).ready(function () {
-
-        $(document).on('click', 'a[data-role=update]', function () {
-            var id = $(this).data('id');
-            var name = $('#'+id).children('td[data-target=name]').text();
-            var director = $('#'+id).children('td[data-target=director]').text();
-            var actors = $('#'+id).children('td[data-target=actors]').text();
-            var budget = $('#'+id).children('td[data-target=budget]').text();
-
-            $('#name').val(name);
-            $('#director').val(director);
-            $('#actors').val(actors);
-            $('#budget').val(budget);
-            $('#filmID').val(id);
-
+        $('.updateBtn').on('click', function () {
+            $tr = $(this).closest('tr');
+            var text = JSON.parse($tr.attr('data-value'));
+            console.log(text);
+            $('#name').val(text.name);
+            $('#director').val(text.director);
+            $('#actors').val(text.actors);
+            $('#budget').val(text.budget);
+            $('#id').val(text.id);
             $('#updateModal').modal('toggle');
         })
 
         $('#Submit').click(function () {
-            var id = $('#filmID').val();
+            var id = $('#id').val();
             var name = $('#name').val();
             var director = $('#director').val();
             var actors = $('#actors').val();
@@ -84,7 +91,7 @@
         <form action="delete" method="post">
 
       <div class="modal-body">
-        <input type="hidden" name="delete_id" id="delete_id">
+        <input type="hidden" name="id" id="id">
         <h4>Удалить информацию</h4>
       </div>
       <div class="modal-footer">
@@ -123,13 +130,9 @@
                     <label>Budget</label>
                     <input type="text" id="budget" class="form-control">
                 </div>
-                <div class="form-group">
-                    <input type="hidden" id="filmID" class="form-control">
-                </div>
-
             </div>
             <div class="modal-footer">
-                <a href="#" id="Submit" name="Submit" class="btn btn-primary pull-right">UPDATE</a>
+                <a id="Submit" name="Submit" class="btn btn-primary pull-right" href="/films/">UPDATE</a>
                 <button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>
             </div>
             </form>
