@@ -28,7 +28,7 @@ class FilmsController extends Controller
                 "INSERT INTO `films`(`id`,`name`,`director`,`actors`,`budget`) 
                     VALUES(NULL,'" . $name . "','" . $director . "','" . $actors . "','" . $budget . "')");
             if($db){
-                header('Location: /films/');
+                header('Location: /films');
             }
         }
 
@@ -43,9 +43,6 @@ class FilmsController extends Controller
             $budget = $_POST['budget'];
             $db->update(
                 "UPDATE `films` SET name = '" . $name . "' , director='" . $director . "', actors='" . $actors . "', budget='" . $budget . "' WHERE id='$id'");
-            if($db){
-                header('Location: /films/');
-            }
 
     }
     public function delete(){
@@ -54,7 +51,7 @@ class FilmsController extends Controller
             $id = $_POST['id'];
             $db->delete("DELETE FROM `films` where id='$id'");
             if($db){
-                header('Location: /films/');
+                header('Location: /films');
             }
 
         }

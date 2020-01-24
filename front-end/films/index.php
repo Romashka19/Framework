@@ -116,23 +116,23 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" id="name" class="form-control">
+                    <input type="text" name="id" id="name" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>Director</label>
-                    <input type="text" id="director" class="form-control">
+                    <input type="text" name="director" id="director" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>Actors</label>
-                    <input type="text" id="actors" class="form-control">
+                    <input type="text" name="actors" id="actors" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>Budget</label>
-                    <input type="text" id="budget" class="form-control">
+                    <input type="text" name="budget" id="budget" class="form-control">
                 </div>
             </div>
             <div class="modal-footer">
-                <a id="Submit" name="Submit" class="btn btn-primary pull-right" href="/films/">UPDATE</a>
+                <a id="Submit" class="btn btn-primary pull-right" href="/films">UPDATE</a>
                 <button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>
             </div>
             </form>

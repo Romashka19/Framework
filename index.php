@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 use System\Route;
 
 require 'System/Debug.php';
@@ -12,10 +12,10 @@ spl_autoload_register(function ($class){
     }*/
 
 });
+require 'request/routes.php';
 
 
 
-session_start();
 
 $route = new Route;
 $route->run();
