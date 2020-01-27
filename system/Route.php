@@ -20,10 +20,10 @@ class Route
     }
     public static function run(){
         $url = trim($_SERVER['REQUEST_URI'],'/');
-        if(stripos($url,"?") != null) {
-            $url = strstr($url,"?",true);
-            $url = trim($url,'/');
-        }
+        //if(stripos($url,"?") != null) {
+            //$url = strstr($url,"?",true);
+            //$url = trim($url,'/');
+       // }
        //создать для стартовой страницы
             foreach (self::$routes as $value) {
                 if ($value["route"] == $url) {

@@ -35,7 +35,7 @@ class Database implements IDatabase
         $result = self::$db->query($sql);
         return $result->fetchAll(PDO::FETCH_ASSOC);
     }
-    public static function create($sql){
+    public static function create(string $sql) : void{
         self::connection();
         self::$db->query($sql);
     }

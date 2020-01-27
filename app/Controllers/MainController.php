@@ -5,11 +5,13 @@ namespace App\Controllers;
 
 use System\Controller;
 use System\Database;
+use System\View;
 
 class MainController extends Controller
 {
     public function index(){
         $db = new Database;
-        $this->view->render('Главная cnhfybwf');
+
+        //View::render('Главная film','default.php');
     }
 }

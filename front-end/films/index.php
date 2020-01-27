@@ -95,7 +95,7 @@
         <h4>Удалить информацию</h4>
       </div>
       <div class="modal-footer">
-        <button type="submit" name="deleteData" class="btn btn-danger" href="/front-end/films/">Delete</button>
+        <button type="submit" name="deleteData" class="btn btn-danger">Delete</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
         </form>
@@ -132,7 +132,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a id="Submit" class="btn btn-primary pull-right" href="/films">UPDATE</a>
+                <a id="Submit" class="btn btn-primary pull-right" href="/films/">UPDATE</a>
                 <button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>
             </div>
             </form>
