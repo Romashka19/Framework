@@ -1,3 +1,7 @@
+<?php
+
+
+?>
 <p>Main film page</p>
 <a type="button" class="btn btn-primary" href="create">Cоздать</a>
 <table>

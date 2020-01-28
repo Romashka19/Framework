@@ -12,8 +12,7 @@ class Auth
 //поытка войти в акк
     public function attempt($login, $password){
         $db = Database::getInstance();
-        $_SESSION['session_username'] = null;
-        if(true) {
+        if($_SESSION['session_username'] == null) {
             if (!empty($login) && !empty($password)) {
                 $sql = $db->select("SELECT * FROM `users` WHERE login='" . $login . "'");
                 $row = current($sql);

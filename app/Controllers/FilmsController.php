@@ -6,44 +6,45 @@ namespace App\Controllers;
 use System\Controller;
 use System\Database;
 use System\View;
+use PDO;
 
 class FilmsController extends Controller
 {
 
 
     public function index(){
-
         $db = Database::getInstance();
         $data['data'] = $db->select("SELECT * FROM `films`;");
         //debug($data);
-        return View::render('Главная film','default.php' ,$data);
+        return $this->view->render('Главная film',"default" ,$data);
+
     }
     public function create(){
         $db = Database::getInstance();
         if(isset($_POST["Submit"])) {
-            $name = $_POST['name'];
-            $director = $_POST['director'];
-            $actors = $_POST['actors'];
-            $budget = $_POST['budget'];
+            $name = $db->quote($_POST['name']);
+            $director = $db->quote($_POST['director']);
+            $actors = $db->quote($_POST['actors']);
+            $budget = (float)$_POST['budget'];
             $db->create(
                 "INSERT INTO `films`(`id`,`name`,`director`,`actors`,`budget`) 
-                    VALUES(NULL,'" . (string)$name . "','" . (string)$director . "','" . (string)$actors . "','" . (int)$budget . "');");
+                    VALUES(NULL, $name , $director ,$actors , $budget);");
             if($db){
                 header('Location: /films/');
             }
         }
 
-        View::render('Главная film','default.php');
+        $this->view->render('Главная film',"default");
     }
     public function update(){
         $db = Database::getInstance();
             $id = (int)$_POST['id'];
-            $name = (string)$_POST['name'];
-            $director = (string)$_POST['director'];
-            $actors = (string)$_POST['actors'];
-            $budget = (int)$_POST['budget'];
+            $name = $db->quote($_POST['name']);
+            $director = $db->quote($_POST['director']);
+            $actors = $db->quote($_POST['actors']);
+            $budget = (float)$_POST['budget'];
             $db->update(
-                "UPDATE `films` SET name = '" . $name . "' , director='" . $director . "', actors='" . $actors . "', budget='" . $budget . "' WHERE id='$id';");
+                "UPDATE `films` SET name = $name  , director= $director , actors=$actors , budget= $budget WHERE id='$id';");
 
     }
     public function delete(){

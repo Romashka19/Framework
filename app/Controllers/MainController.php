@@ -10,8 +10,8 @@ use System\View;
 class MainController extends Controller
 {
     public function index(){
-        $db = new Database;
+        echo "123123";
+        $this->view->render('Главная film',"default");
 
-        //View::render('Главная film','default.php');
     }
 }
