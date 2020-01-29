@@ -11,7 +11,7 @@
 <body>
 <div>
     <header>
-        <nav class="navbar navbar-dark bg-dark">
+        <nav class="navbar navbar-light bg-primary">
             <span class="navbar-brand mb-0 h1">Films</span>
             <?php if($_SESSION['session_username']): ?>
                 <?php echo $_SESSION['session_username'];?>
@@ -22,12 +22,6 @@
             <?php endif; ?>
         </nav>
     </header>
-    <div class="container" style="width: 900px;  margin: 0 auto">
-        <div align="center"><?php echo $content; ?></div>
-    </div>
-    <footer>
-
-    </footer>
 </div>
 </body>
 </html>

@@ -1,7 +1,10 @@
 <?php
 
+    $title = "FILMS";
+    include __DIR__ . "/../layout/default.php";
 
 ?>
+<div class="container" align="center" style="margin-top: 20px">
 <p>Main film page</p>
 <a type="button" class="btn btn-primary" href="create">Cоздать</a>
 <table>
@@ -26,6 +29,7 @@
     <?php endforeach; ?>
 </table>
 <a type="button" class="btn btn-success" href="/">На главную</a>
+</div>
 
 <!---SCRIPTS------------------------------------------------------------------------------ --->
 <script>

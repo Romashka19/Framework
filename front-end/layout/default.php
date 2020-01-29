@@ -6,7 +6,7 @@
     <script src="/js/bootstrap.min.js"  type="text/javascript"> </script>
     <script src="/js/popper.min.js"  type="text/javascript"></script>
     <meta charset="UTF-8">
-    <title><?php echo $title; ?></title>
+    <title><?= $title; ?></title>
 </head>
 <body>
 <div>
@@ -18,16 +18,11 @@
                 <a href="/auth/logout">LOGOUT</a>
             <?php else: ?>
             <p><a href="/auth/login">Login</a></p>
-            <p><a href="/auth/register">Register</a></p>
             <?php endif; ?>
+            <p><a href="/auth/register">Register</a></p>
         </nav>
     </header>
-    <div class="container" style="width: 900px;  margin: 0 auto">
-        <div align="center"><?php echo $content; ?></div>
-    </div>
-    <footer>
 
-    </footer>
 </div>
 </body>
 </html>

@@ -14,8 +14,5 @@ spl_autoload_register(function ($class){
 });
 require 'request/routes.php';
 
-
-
-
 $route = new Route;
 $route->run();

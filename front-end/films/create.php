@@ -1,3 +1,10 @@
+<?php
+
+$title = "CREATE";
+include __DIR__ . "/../layout/default.php";
+
+?>
+<div class="container" align="center" style="margin-top: 20px">
 <form action="create" method="POST">
     <ul style="list-style-type: none;">
         <li><label>Название: <input type="text" name="name" ></label></li>
@@ -8,3 +15,4 @@
     <button class="btn btn-success" type="submit" name="Submit">Save info</button>
 </form>
 <p><a class="btn btn-primary" href="/films/">Назад</a></p>
+</div>

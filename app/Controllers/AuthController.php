@@ -20,13 +20,12 @@ class AuthController extends Controller
                 $password = $_POST['password'];
                 $att = $auth->attempt($login,$password);
                 if($att == true) {
-                    $_SESSION['session_username'] = $login;
                     header('Location: /');
                 } else {
                     echo "Неудачный вход";
                 }
         }
-        $this->view->render('LogIn');
+        $this->view->render();
 
     }
     public function register(){
@@ -47,12 +46,12 @@ class AuthController extends Controller
                 echo "Неудачная регистраия";
             }
         }
-            $this->view->render('Register');
+        $this->view->render();
     }
 
     public function logout(){
-        unset($_SESSION['session_username']);
-        session_destroy();
+        $auth = new Auth();
+        $auth->logout();
         header("Location: /");
     }
 }

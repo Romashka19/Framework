@@ -16,12 +16,13 @@ class View
     }
 
 
-    public function render($title,$layout,$data = []){
+    public function render($data = []){
         extract($data);
         ob_start();
         require __DIR__ . '/../front-end/' .$this->path.'.php';
-        $content = ob_get_clean();
-        include __DIR__ . "/../front-end/layout/".$layout.'.php';
+       // $content = ob_get_clean();
+        //debug($content);
+        //include __DIR__ . "/../front-end/layout/default.php";
     }
 
 }
